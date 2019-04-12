@@ -13,3 +13,8 @@ services:
     ports:
       - "3000:3000"
     command: "npm start"
+
+networks:
+  default:
+    external:
+      name: "net-travala"
