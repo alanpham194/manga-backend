@@ -1,0 +1,15 @@
+version: "3"
+services:
+  node:
+    container_name: manganode
+    hostname: manganode
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+    command: "npm start"
