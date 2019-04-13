@@ -45,7 +45,13 @@ module.exports = class {
     }
     setActiveService(req,res){
         var active = req.body.active;
+        var api_key = req.body.api_key;
         console.log(active);
+        if (api_key!="122334445555"){
+            res.send({
+                "err":"Forbidden"
+            })
+        }
         if (active == null){
             active = false
         }
